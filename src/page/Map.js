@@ -10,6 +10,7 @@ import {
   Text,
 } from '@chakra-ui/react'
 import { FaLocationArrow, FaTimes } from 'react-icons/fa'
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 
 import {
   useJsApiLoader,
@@ -23,6 +24,7 @@ import { useRef, useState } from 'react'
 const center = { lat: 48.8584, lng: 2.2945 }
 
 function Map() {
+  let navigate = useNavigate()
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries: ['places'],
@@ -65,6 +67,7 @@ function Map() {
     setDuration('')
     originRef.current.value = ''
     destiantionRef.current.value = ''
+    
   }
 
   return (
@@ -123,16 +126,16 @@ function Map() {
           </Box>
 
           <ButtonGroup>
-            <Button colorScheme='pink' type='submit' onClick={calculateRoute}>
+            <Button colorScheme='green' type='submit' onClick={calculateRoute}>
               GO
             </Button>
-            <IconButton
-              aria-label='center back'
-              icon={<FaTimes />}
-              onClick={clearRoute}
-            />
+            <Button colorScheme='yellow' type='submit' onClick={()=>navigate('/path')}>
+              Favourite
+            </Button>
+           
           </ButtonGroup>
         </HStack>
+       
         <HStack spacing={4} mt={4} justifyContent='space-between'>
           <Text>Distance: {distance} </Text>
           <Text>Duration: {duration} </Text>
