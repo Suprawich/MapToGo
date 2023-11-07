@@ -129,13 +129,13 @@ function Map() {
             <Button colorScheme='green' type='submit' onClick={calculateRoute}>
               GO
             </Button>
-            <Button colorScheme='yellow' type='submit' onClick={()=>navigate('/path')}>
+            <Button colorScheme='pink' type='submit' onClick={()=>navigate('/path')}>
               Favourite
             </Button>
            
           </ButtonGroup>
         </HStack>
-       
+        <HStack></HStack>
         <HStack spacing={4} mt={4} justifyContent='space-between'>
           <Text>Distance: {distance} </Text>
           <Text>Duration: {duration} </Text>
