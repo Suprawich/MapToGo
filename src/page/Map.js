@@ -75,12 +75,12 @@ function Map() {
       h='100vh'
       w='100vw'
     >
-      <Box position='absolute' left={0} top={0} h='100%' w='100%'>
+      <Box position='absolute' left={0} top={0} h='90%' w='170%'>
         {/* Google Map Box */}
         <GoogleMap
           center={center}
           zoom={15}
-          mapContainerStyle={{ width: '100%', height: '100%' }}
+          mapContainerStyle={{ width: '100%', height: '200%' }}
           options={{
             zoomControl: false,
             streetViewControl: false,
