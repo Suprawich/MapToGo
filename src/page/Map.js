@@ -101,8 +101,10 @@ function Map() {
         m={4}
         bgColor='white'
         shadow='base'
-        minW='container.md'
+        //minW='container.md'
         zIndex='1'
+        width = '100%'
+        height = 'auto'
       >
         <HStack spacing={2} justifyContent='space-between'>
           <Box flexGrow={1}>
@@ -122,7 +124,7 @@ function Map() {
 
           <ButtonGroup>
             <Button colorScheme='pink' type='submit' onClick={calculateRoute}>
-              Calculate Route
+              GO
             </Button>
             <IconButton
               aria-label='center back'
@@ -134,15 +136,7 @@ function Map() {
         <HStack spacing={4} mt={4} justifyContent='space-between'>
           <Text>Distance: {distance} </Text>
           <Text>Duration: {duration} </Text>
-          <IconButton
-            aria-label='center back'
-            icon={<FaLocationArrow />}
-            isRound
-            onClick={() => {
-              map.panTo(center)
-              map.setZoom(15)
-            }}
-          />
+          
         </HStack>
       </Box>
     </Flex>
